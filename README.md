@@ -42,9 +42,9 @@ also stored as a dynamic attribute.
 + Traffic_Distribution.m: based on the selected user distribution type, the generation of users is performed in the file, by defining UE related specifications.
  
 + Cell_Scenario.m: based on the number of rings that are intended to be allocated within the satellite's FoV, cells are generated in the file.
- 
-+ BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS.
-1) To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html.
-2) Based on the selected cell generation model (cell_scenario_model) cells will be generated in a fixed or variable manner. For variable cell generation, 'BK_MaxClique.m' and 'BK_MaxIS.m' functions must be added into the execution folder. Find them in: https://es.mathworks.com/matlabcentral/fileexchange/24591-bron-kerbosch-maximal-independent-set-and-maximal-clique-algorithms
+
++ Non_Fixed_Beam_Aggrupation.m: used for the generation of cells in a variable manner (cell_scenario_model) following the Bron-Kerbosch maximal independent set and maximal clique algorithm. In addition to the fucntion, for variable cell generation, 'BK_MaxClique.m' and 'BK_MaxIS.m' auxiliary functions must be added into the execution folder. Find them in: https://es.mathworks.com/matlabcentral/fileexchange/24591-bron-kerbosch-maximal-independent-set-and-maximal-clique-algorithms
+
++ BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS. To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html.
  
 NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Fixed and Variablexample GIFs: [GIF]_Illumination_10_rings.gif and [GIF]_Illumination_MAP_10_rings.gif 
