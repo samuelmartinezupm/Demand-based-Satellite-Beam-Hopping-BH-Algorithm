@@ -44,7 +44,6 @@ also stored as a dynamic attribute.
  
 + Cell_Scenario.m: based on the number of rings that are intended to be allocated within the satellite's FoV, cells are generated in the file.
  
-+ BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS.  
++ BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS. To consider additional losses within the link budget uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html
  
- 
-NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures Will be displayed. Example GIF attached.
+NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Example GIFs: [GIF]_Illumination_10_rings.gif and [GIF]_Illumination_MAP_10_rings.gif 
