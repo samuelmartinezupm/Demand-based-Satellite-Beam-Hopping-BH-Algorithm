@@ -6,7 +6,8 @@ Over and above the legal restrictions imposed by this license, if you use this s
  
 DEF.: "The demand-based algorithm is a deterministic algorithm where illumination scheduling (BH) and resource allocation is performed in response to users' traffic demand. It is dynamically adjusted according to the real-time needs of users at any given time. The overall flowchart is presented in Simulation_Flow.jpg. The diagram is divided in two parts: pre-computation modules to ease the assignment of resources and the calculation of the parameters of interest (PoI): UC/EC/TTS, and the BH algorithm to dynamically calculate illumination [Ill], power [P] and bandwidth [B] for each time slot. For more information, check the reference paper."
  
-* INPUT: satellite altitude (h_sat), minimum elevation angle (el_min), number of rings within the satellite's FoV (rings), frequency (f), total ilumination slots (frame), slot duration (frame_dur), number of colours (colours), simultaneous beams (beams), ilumination weighting factor (TTL), number of users (n_users), distribution of users (traffic_model), total RF power (P_T), total bandwidth per colour (BW_T).
+* INPUT: satellite altitude (h_sat), minimum elevation angle (el_min), number of rings within the satellite's FoV (rings), frequency (f), total ilumination slots (frame), slot duration (frame_dur), number of colours (colours), simultaneous beams (beams), ilumination weighting factor (TTL), number of users (n_users), distribution of users (traffic_model): random/linear/hotspot, cell scenario (cell_scenario_model): fixed/variable, total RF power (P_T), total bandwidth per colour (BW_T).
+
  
 * OUTPUT (FoM): Unserved Capacity (UC), Extra Served Capacity (EC), Time To Serve (TTS).
  
@@ -36,12 +37,14 @@ time instant as active or inactive. If that is the case, the aggregated power an
 resources assigned at cell level are computed. In case the cell is active, the assigned colour is
 also stored as a dynamic attribute.
  
-+ main.m: the executable file where BH algorithm is executed. Input parameters are defined in the file and both pre-computation (Traffic_Distribution, Cell_Scenario), and BH computation (BH_Calculation) funtions are called through it.
++ main.m: the executable file where BH algorithm is executed. Input parameters are defined in the file and both pre-computation (traffic_model->Traffic_Distribution, cell_scenario_model->Cell_Scenario), and BH computation (BH_Calculation) funtions are called through it.
  
 + Traffic_Distribution.m: based on the selected user distribution type, the generation of users is performed in the file, by defining UE related specifications.
  
 + Cell_Scenario.m: based on the number of rings that are intended to be allocated within the satellite's FoV, cells are generated in the file.
  
-+ BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS. To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html
++ BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS.
+1) To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html.
+2) Based on the selected cell generation model (cell_scenario_model) cells will be generated in a fixed or variable manner. For variable cell generation, 'BK_MaxClique.m' and 'BK_MaxIS.m' functions must be added into the execution folder. Find them in: https://es.mathworks.com/matlabcentral/fileexchange/24591-bron-kerbosch-maximal-independent-set-and-maximal-clique-algorithms
  
-NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Example GIFs: [GIF]_Illumination_10_rings.gif and [GIF]_Illumination_MAP_10_rings.gif 
+NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Fixed and Variablexample GIFs: [GIF]_Illumination_10_rings.gif and [GIF]_Illumination_MAP_10_rings.gif 
