@@ -43,7 +43,7 @@ also stored as a dynamic attribute.
  
 + Cell_Scenario.m: based on the number of rings that are intended to be allocated within the satellite's FoV, cells are generated in the file.
 
-+ Non_Fixed_Beam_Aggrupation.m: used for the generation of cells in a variable manner (cell_scenario_model) following the Bron-Kerbosch maximal independent set and maximal clique algorithm. In addition to the fucntion, for variable cell generation, 'BK_MaxClique.m' and 'BK_MaxIS.m' auxiliary functions must be added into the execution folder. Find them in: https://es.mathworks.com/matlabcentral/fileexchange/24591-bron-kerbosch-maximal-independent-set-and-maximal-clique-algorithms
++ Non_Fixed_Beam_Aggrupation.m: used for the generation of cells in a variable manner (cell_scenario_model) following the Bron-Kerbosch maximal independent set and maximal clique algorithm. IMPORTANT! In addition to the fucntion, for variable cell generation, 'BK_MaxClique.m' and 'BK_MaxIS.m' auxiliary functions must be added into the execution folder. Find them in: https://es.mathworks.com/matlabcentral/fileexchange/24591-bron-kerbosch-maximal-independent-set-and-maximal-clique-algorithms
 
 + BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS. To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html.
  
