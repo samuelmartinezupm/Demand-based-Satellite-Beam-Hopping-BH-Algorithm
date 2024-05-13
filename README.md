@@ -5,6 +5,8 @@ Over and above the legal restrictions imposed by this license, if you use this s
 + Samuel Martínez Zamacola, Ramón Martínez Rodríguez-Osorio, Miguel A. Salas-Natera, "Joint Satellite Platform and Constellation Sizing for Fast Beam-Hopping in 5G/6G Non-Terrestrial Networks",
  
 DEF.: "The demand-based algorithm is a deterministic algorithm where illumination scheduling (BH) and resource allocation is performed in response to users' traffic demand. It is dynamically adjusted according to the real-time needs of users at any given time. The overall flowchart is presented in Simulation_Flow.jpg. The diagram is divided in two parts: pre-computation modules to ease the assignment of resources and the calculation of the parameters of interest (PoI): UC/EC/TTS, and the BH algorithm to dynamically calculate illumination [Ill], power [P] and bandwidth [B] for each time slot. For more information, check the reference paper."
+
+iLL
  
 * INPUT: satellite altitude (h_sat), minimum elevation angle (el_min), number of rings within the satellite's FoV (rings), frequency (f), total ilumination slots (frame), slot duration (frame_dur), number of colours (colours), simultaneous beams (beams), ilumination weighting factor (TTL), number of users (n_users), distribution of users (traffic_model), total RF power (P_T), total bandwidth per colour (BW_T).
  
