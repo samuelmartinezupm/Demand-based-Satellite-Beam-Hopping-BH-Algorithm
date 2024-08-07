@@ -2,7 +2,7 @@
 
 This code is © Samuel M. Zamacola, 2024, and it is made available under the GPL license enclosed with the software.
 Over and above the legal restrictions imposed by this license, if you use this software for an academic publication then you are obliged to provide proper attribution to the paper that describes it:
-+ Samuel Martínez Zamacola, Ramón Martínez Rodríguez-Osorio, Miguel A. Salas-Natera, "Joint Satellite Platform and Constellation Sizing for Fast Beam-Hopping in 5G/6G Non-Terrestrial Networks",
++ Samuel Martínez Zamacola, Ramón Martínez Rodríguez-Osorio, Miguel A. Salas-Natera, "Joint Satellite Platform and Constellation Sizing for Fast Beam-Hopping in 5G/6G Non-Terrestrial Networks", 
  
 DEF.: "The demand-based algorithm is a deterministic algorithm where illumination scheduling (BH) and resource allocation is performed in response to users' traffic demand. It is dynamically adjusted according to the real-time needs of users at any given time. The overall flowchart is presented in Simulation_Flow.jpg. The diagram is divided in two parts: pre-computation modules to ease the assignment of resources and the calculation of the parameters of interest (PoI): UC/EC/TTS, and the BH algorithm to dynamically calculate illumination [Ill], power [P] and bandwidth [B] for each time slot. For more information, check the reference paper."
  
@@ -48,3 +48,6 @@ also stored as a dynamic attribute.
 + BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS. To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html.
  
 NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Fixed and Variablexample GIFs: [GIF]_Illumination_10_rings.gif and [GIF]_Illumination_MAP_10_rings.gif 
+
+## Contact
+For questions, issues, or contributions, please contact Samuel M. Zamacola at samuel.martinez@upm.es.
