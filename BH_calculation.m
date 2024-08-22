@@ -167,14 +167,29 @@ elseif strcmp(cell_scenario_model,'variable')
     c_scenario=[];
     centers=zeros(number_cells,2);
     for i=1:number_cells
-        % Centroid calculation;
+        % Initial cell center guess: centroid (h_init,k_init)
+        h_init=0;
+        x_cell_users=[];
+        k_init=0;
+        y_cell_users=[];
         for user_idx=1:length(S{i})
-            centers(i,1)=centers(i,1)+users(S{i}(user_idx)).location(1);
-            centers(i,2)=centers(i,2)+users(S{i}(user_idx)).location(2);
+            x_cell_users=[x_cell_users users(S{i}(user_idx)).location(1)];
+            y_cell_users=[y_cell_users users(S{i}(user_idx)).location(2)];
         end
-        centers(i,1)=centers(i,1)/length(S{i});
-        centers(i,2)=centers(i,2)/length(S{i});
+        h_init= mean(x_cell_users); 
+        k_init= mean (y_cell_users);
        
+        % Objective function to minimize: ensure that the maximum distance from the center to any point does not exceed the given cell radius: l.
+        objectiveFunction = @(center) max(sqrt((x_cell_users - center(1)).^2 + (y_cell_users - center(2)).^2)) - l;
+        % Optimize to find the best center (h, k);
+        if length(S{i})>1
+            optimal_center = fminsearch(objectiveFunction, [h_init, k_init]);
+        else
+            optimal_center=[h_init, k_init]; % Within the possible solutions better to have the user at cell center, to avoind gain reduction.
+        end
+        centers(i,1)=optimal_center(1);
+        centers(i,2)=optimal_center(2);
+
         c_scenario=[c_scenario c(i,centers(i,:),l,[])]; %constructor: for this case assume interfering []
         c_scenario(i).compute_betta_to_sat(h_sat); % Compute betta to the cell center so that the gain loss due to beam scanning (moving ftom boresight) can be then accounted: non-ideal isotropic behavior of the embedded element gain.
         
