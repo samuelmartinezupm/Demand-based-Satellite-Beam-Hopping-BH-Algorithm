@@ -47,7 +47,7 @@ also stored as a dynamic attribute.
 
 + BH_Calculation.m: execution of the BH algorithm. Once these pre-computations are preformed (users and cells), for each time slot, cell illumination [Ill], resource allocation ([B] and [P]) and link budget calculations are performed, determining the FoM: EC, UC, TTS. To consider EXTRA losses rather than FSL ones, within the link budget equation, uncomment lines 217-252. The following files are required to be downloaded and added into the execution folder: 'maps.mat','p836.mat','p837.mat' and 'p840.mat'. Find them in: https://es.mathworks.com/help/satcom/ref/p618propagationlosses.html.
  
-NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Fixed and Variablexample GIFs: [GIF]_Illumination_10_rings.gif and [GIF]_Illumination_MAP_10_rings.gif 
+NOTE: For a fast execution of the algorithm set display=0 in main.m. No figures/GIFs will be displayed. Fixed and Variablexample GIFs: [GIF]_Illumination_xx_rings.gif and [GIF]_Illumination_MAP_xx_rings.gif 
 
 ## Contact
 For questions, issues, or contributions, please contact Samuel M. Zamacola at samuel.martinez@upm.es.
