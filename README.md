@@ -2,7 +2,7 @@
 
 This code is © Samuel M. Zamacola, 2024, and it is made available under the GPL license enclosed with the software.
 Over and above the legal restrictions imposed by this license, if you use this software for an academic publication then you are obliged to provide proper attribution to the paper that describes it:
-+ S. M. Zamacola, R. M. Rodríguez-Osorio, and M. A. Salas-Natera, ‘Joint satellite platform and constellation sizing for instantaneous beam-hopping in 5G/6G Non-Terrestrial Networks’, Computer Networks, p. 110942, 2024. 
++ S. M. Zamacola, R. M. Rodríguez-Osorio, and M. A. Salas-Natera, ‘Joint satellite platform and constellation sizing for instantaneous beam-hopping in 5G/6G Non-Terrestrial Networks’, Computer Networks, vol. 257, p. 110942, 2025.
  
 DEF.: "The demand-based algorithm is a deterministic algorithm where illumination scheduling (BH) and resource allocation is performed in response to users' traffic demand. It is dynamically adjusted according to the real-time needs of users at any given time. The overall flowchart is presented in Simulation_Flow.jpg. The diagram is divided in two parts: pre-computation modules to ease the assignment of resources and the calculation of the parameters of interest (PoI): UC/EC/TTS, and the BH algorithm to dynamically calculate illumination [Ill], power [P] and bandwidth [B] for each time slot. For more information, check the reference paper."
  
